@@ -2,14 +2,16 @@ const app = Vue.createApp({
   data() {
     return {
       name: "Matthew Chen",
-      age: "30 years old",
-      futureAge: "In 5 years I will be 35 years old",
+      age: 30,
       vueLink: "https://cdn.bulbagarden.net/upload/4/49/Ash_Pikachu.png",
     };
   },
   methods: {
     outputFavNumber() {
       return Math.random();
+    },
+    calculateAge() {
+      return this.age + 5;
     },
   },
 });
