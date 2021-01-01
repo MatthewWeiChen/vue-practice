@@ -41,6 +41,16 @@ const app = Vue.createApp({
       return this.name + " " + "Chen";
     },
   },
+  watch: {
+    counter(value) {
+      if (value > 50) {
+        const that = this;
+        setTimeout(function () {
+          that.counter = 0;
+        }, 2000);
+      }
+    },
+  },
 });
 
 app.mount("#events");
