@@ -33,6 +33,9 @@ const app = Vue.createApp({
       }
     },
   },
+  pickRandom() {
+    this.user2 = random;
+  },
 });
 
 app.mount("#assignment");
