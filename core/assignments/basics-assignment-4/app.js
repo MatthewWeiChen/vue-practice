@@ -1,40 +1,24 @@
 const app = Vue.createApp({
   data() {
     return {
-      user1: false,
-      user2: false,
-      hidden: false,
+      paragraphIsVisible: true,
       userText: "",
     };
   },
   methods: {
-    selectUser(event) {
-      if (event.target.value === "user1") {
-        this.user1 = true;
-      } else if (event.target.value === "user2") {
-        this.user2 = true;
-      }
-    },
     hideClass() {
-      this.hidden = !this.hidden;
+      this.paragraphIsVisible = !this.paragraphIsVisible;
     },
   },
   computed: {
-    userClass() {
-      if (this.user1) {
-        return "user1";
-      } else if (this.user2) {
-        return "user2";
-      }
+    paraClasses() {
+      return {
+        user1: this.userText === "user1",
+        user2: this.userText === "user2",
+        visible: this.paragraphIsVisible,
+        hidden: !this.paragraphIsVisible,
+      };
     },
-    returnClass() {
-      if (!this.hidden) {
-        return "hidden";
-      }
-    },
-  },
-  pickRandom() {
-    this.user2 = random;
   },
 });
 
