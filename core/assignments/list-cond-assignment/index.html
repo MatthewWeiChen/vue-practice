@@ -23,12 +23,11 @@
       <input type="text" v-model="inputEnteredValue">
       <button @click="addTask">Add Task</button>
       <ul v-if="show === true">
-        <li v-for="task in tasks">{{ task }}</li>
+        <li v-for="task in tasks" :key="task">{{ task }}</li>
       </ul>
       <!-- 3) When the below button is pressed, the list should be shown or hidden -->
       <!-- BONUS: Also update the button caption -->
-      <button @click="changeView" v-if="show === true">Hide</button>
-      <button @click="changeView" v-else>Show List</button>
+      <button @click="changeView">{{showButton}}</button>
     </section>
   </body>
 </html>

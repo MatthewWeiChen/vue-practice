@@ -13,12 +13,10 @@ const app = Vue.createApp({
     changeView() {
       this.show = !this.show;
     },
-    changeHideOrShow() {
-      if (this.show) {
-        return "Hide";
-      } else {
-        return "Show List";
-      }
+  },
+  computed: {
+    showButton() {
+      return this.show ? "Hide" : "Show List";
     },
   },
 });
